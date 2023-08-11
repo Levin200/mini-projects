@@ -32,7 +32,7 @@ def evaluvate(user_value):
     hands = ["Rock","Paper","Scissors"]
     computer_choise.config(text="Computer : {}".format(hands[computer_value]))
 
-    # declare the points global to use it outside the function
+    # Declare the points global to use it outside the function
     global player_points
     global computer_points
 
@@ -69,19 +69,23 @@ def evaluvate(user_value):
             game_bot.config(text="YOU Won - "+" Computer: You won by luck")
             player_points += 1
 
+    # Update the values of the score
     player_score.config(text ="Player Score: {}".format(player_points))
     computer_score.config(text="Computer Score = {}".format(computer_points))
 
-
+# Display the score of the computer
 computer_score = Label(root,text="Computer Score = {}".format(computer_points),font=("arial",10),width=50,height=4)
 computer_score.grid(row=2,column=1,sticky='ew')
 
+# Display the players score
 player_score = Label(root,text="Player Score: {}".format(player_points),font=("arial",10),width=50,height=4)
 player_score.grid(row=2,column=3,sticky='ew')
 
+# Display the computer's choises
 computer_choise = Label(root,text="",font=("arial",10),width=50,height=4)
 computer_choise.grid(row=3,column=2)
 
+# Buttons for Rock, Paper, Scissors
 rock = Button(root,text="ROCK",font=("bell mt",10),command=lambda:evaluvate(0))
 rock.grid(row=4,column=1,sticky='ew')
 
@@ -91,6 +95,7 @@ paper.grid(row=4,column=2,sticky='ew')
 scissors = Button(root,text="SCISSORS",font=("bell mt",10),command=lambda:evaluvate(2))
 scissors.grid(row=4,column=3,sticky='ew')
 
+# Display the Win, Lose or Tie message
 game_bot = Label(root,text="",font=("arial",14),width=50,height=4)
 game_bot.grid(row=7,column=2)
 
