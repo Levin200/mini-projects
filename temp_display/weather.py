@@ -15,9 +15,13 @@ def weather(place):
 
     response_weather = requests.get(weather_url).json()
 
-    print(round(response_weather["main"]["temp"] - 273.15,2), round(response_weather["main"]["feels_like"] - 273.15, 2))
+    #print(round(response_weather["main"]["temp"] - 273.15,2), round(response_weather["main"]["feels_like"] - 273.15, 2))
 
     temp = round(response_weather["main"]["temp"] - 273.15,2)
     feels_like = round(response_weather["main"]["feels_like"] - 273.15, 2)
 
-    return temp, feels_like
+    description = response_weather["weather"][0]["description"]
+    icon = response_weather["weather"][0]["icon"]
+    #print(description)
+
+    return temp, feels_like, description, icon

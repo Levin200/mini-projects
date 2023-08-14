@@ -4,11 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Report</title>
+    <style>
+        body {
+            text-align: left;
+            background-image: url('static/weather_index.jpeg');
+            color: whitesmoke;
+        }
+
+        h1 {
+            font-size: 62px;
+            padding-left: 15px;
+        }
+
+        form, select,button {
+            display: inline-block;
+            padding-left: 25px;
+        }
+
+        #info {
+            font-size: 36px;
+        }
+
+        select {
+            font-size: xx-large;
+            text-align: justify;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 2px;
+        }
+
+        button {
+            font-size: x-large;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 15px 60px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Weather Report</h1>
-    <p>Please select your location</p>
+    <h1>Weather Report <br> of India</h1>
+    
     <form action="result.html" method="post">
+        <p id="info">Please select your location</p>
         <select name="place" id="place">
             <option value="Delhi">Delhi</option>
             <option value="Mumbai">Mumbai</option>
@@ -16,6 +54,8 @@
             <option value="Bangalore">Bangalore</option>
             <option value="Kolkata">Kolkata</option>
           </select>
+          <br>
+          <br>
         <button type="submit">Submit</button>
     </form>
 </body>
